@@ -1,0 +1,1 @@
+# yakutia-quiz
