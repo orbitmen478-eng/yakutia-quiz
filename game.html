@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квиз-игра по Якутии — Игра</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для мобильной адаптации блока с рекордом */
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .record-badge {
+            display: inline-block;
+            white-space: nowrap;
+        }
+        @media (max-width: 600px) {
+            .info-row {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="snowCanvas"></canvas>
+    <div id="screenFlash" class="screen-flash"></div>
+
+    <header class="header-container">
+        <div class="logo-group">
+            <a href="https://aguikki.ru/" target="_blank" class="logo-link">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Логотип АГУИКИ" class="logo-image" onerror="this.src='https://placehold.co/80x80/0f172a/67e8f9?text=АГИКИ'">
+                </div>
+            </a>
+            <div>
+                <h1 class="comfortaa header-title">АГУИККИ</h1>
+                <span class="header-subtitle">Кафедра Информатики</span>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="game.html" class="nav-link active">Квиз-Игра</a>
+            <a href="project.html" class="nav-link">О проекте</a>
+            <a href="questions.html" class="nav-link">Мотивы вопросов</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="page-section">
+            
+            <div id="startScreen" class="card-start">
+                <div class="center-content">
+                    <h1 class="comfortaa title-main">Интеллектуальный Квиз</h1>
+                    <p class="subtitle-main">Вам предстоит ответить на 25 вопросов. Допускается не более 3 неверных ответов.</p>
+                </div>
+
+                <div class="btn-center-box">
+                    <button id="startGameBtn" class="comfortaa btn-start">Начать игру!</button>
+                </div>
+
+                <div class="info-row">
+                    <div class="student-details">
+                        <div class="student-label">Разработчик:</div>
+                        <div class="student-name">Оконешников Ньургун (ПИ-25)</div>
+                    </div>
+                    <div class="record-badge">
+                        <span class="comfortaa">Ваш лучший рекорд: <span id="highScoreVal">0</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gameScreen" class="card-game hidden">
+                <div class="status-bar">
+                    <div class="hearts-box">
+                        <span class="status-label">Жизни:</span>
+                        <div id="livesContainer" class="hearts-box"></div>
+                    </div>
+                    <div class="score-badge">
+                        <span class="comfortaa">Счёт: <span id="currentScore">0</span></span>
+                    </div>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-fill"></div>
+                </div>
+
+                <div class="question-box">
+                    <span id="questionCategory" class="category-badge">Категория</span>
+                    <h2 id="questionText" class="question-title">Загрузка...</h2>
+                </div>
+
+                <div id="optionsContainer" class="options-grid"></div>
+
+                <div class="submit-container">
+                    <button id="submitAnswerBtn" disabled class="comfortaa btn-submit">
+                        Ответить
+                    </button>
+                </div>
+            </div>
+
+            <div id="gameOverScreen" class="card-start hidden">
+                <div class="center-content">
+                    <h1 class="comfortaa title-main">Квиз завершен!</h1>
+                    <div class="record-group">
+                        <div class="score-box">
+                            <span class="score-box-label">Ваш результат</span>
+                            <span id="finalScoreVal" class="score-box-val">0</span>
+                        </div>
+                        <div id="newRecordBadge" class="record-badge-new hidden">
+                            <span class="record-badge-text">🎉 Новый рекорд!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-center-box">
+                    <button id="restartGameBtn" class="comfortaa btn-start">Попробовать ещё раз</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <p>© 2026 АГУИККИ Квиз-игра по Якутии. Работу выполнил студент группы ПИ-25 Оконешников Ньургун.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
