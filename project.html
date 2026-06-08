@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квиз-игра по Якутии — О проекте</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="snowCanvas"></canvas>
+
+    <header class="header-container">
+        <div class="logo-group">
+            <a href="https://aguikki.ru/" target="_blank" class="logo-link">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Логотип АГУИКИ" class="logo-image" onerror="this.src='https://placehold.co/80x80/0f172a/67e8f9?text=АГИКИ'">
+                </div>
+            </a>
+            <div>
+                <h1 class="comfortaa header-title">АГУИККИ</h1>
+                <span class="header-subtitle">Кафедра Информатики</span>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="game.html" class="nav-link">Квиз-Игра</a>
+            <a href="project.html" class="nav-link active">О проекте</a>
+            <a href="questions.html" class="nav-link">Мотивы вопросов</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="page-section">
+            <div class="home-grid">
+                <div class="home-image-side">
+                    <div class="rounded-image-wrapper">
+                        <img src="9e879bf5b1c80e5c6a5aa7fb890f572f.jpg" alt="Праздничная ураса в Якутии" class="rounded-decor-image" onerror="this.src='https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                </div>
+                <div class="home-text-side">
+                    <span class="welcome-badge">О разработке</span>
+                    <h2 class="comfortaa main-heading">Курсовая работа по веб-программированию</h2>
+                    <p class="main-paragraph">
+                        Приветствую! Меня зовут Ньургун, я обучаюсь на направлении прикладной информатики, и данный проект является моей практической курсовой работой. Целью разработки было создание интерактивного веб-ресурса, сочетающего в себе развлекательную и образовательную функции.
+                    </p>
+                    <p class="main-paragraph">
+                        Приложение спроектировано с использованием базового стека Front-end технологий (HTML, CSS и ванильный JavaScript) без привлечения сторонних библиотек и надстроек. Код структурирован таким образом, чтобы обеспечить высокую скорость загрузки страниц и корректную адаптивность на мобильных устройствах. Игровой рекорд сохраняется локально на стороне пользователя посредством веб-хранилища <strong>localStorage</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <p>© 2026 АГУИККИ Квиз-игра по Якутии. Работу выполнил студент группы ПИ-25 Оконешников Ньургун.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
